@@ -13,3 +13,5 @@
 # Netlify
 .netlify/
 .env
+netlify-build.sh
+make-exec.sh
