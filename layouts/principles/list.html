@@ -1,0 +1,83 @@
+{{ define "main" }}
+<div class="max-w-5xl mx-auto px-4 py-6">
+  <h1 class="font-heading font-bold text-2xl mb-6 animate__animated animate__fadeIn">{{ .Title }}</h1>
+  
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    {{ range .Pages.ByWeight }}
+    <a href="{{ .Permalink }}" class="principle-card animate__animated animate__fadeInUp" style="animation-delay: {{ mul .Weight 0.05 }}s;">
+      <div class="p-5">
+        <div class="flex items-center mb-3">
+          <div class="w-14 h-14 aspect-square rounded-full bg-{{ .Params.category }} flex items-center justify-center text-white mr-3">
+            <i class="ph ph-{{ .Params.icon }} text-xl"></i>
+          </div>
+          <h3 class="font-heading font-semibold text-lg">{{ .Title }}</h3>
+        </div>
+        
+        {{ if .Params.quote }}
+        <div class="mt-4">
+          <!-- Player Avatar -->
+          {{ if .Params.quoteAuthor }}
+          {{ $kebabName := lower (replace .Params.quoteAuthor " " "-") }}
+          {{ $pngPath := print "/images/avatars/" $kebabName ".png" }}
+          {{ $jpgPath := print "/images/avatars/" $kebabName ".jpg" }}
+          
+          <div class="flex justify-center mb-3">
+            {{ $avatarExists := fileExists (print "static" $pngPath) }}
+            {{ $jpgExists := fileExists (print "static" $jpgPath) }}
+            
+            {{ if or $avatarExists $jpgExists }}
+              <!-- Use actual image if it exists -->
+              {{ if $avatarExists }}
+                <img src="{{ $pngPath | relURL }}" alt="{{ .Params.quoteAuthor }}" class="w-14 h-14 aspect-square rounded-full object-cover border-2 border-{{ .Params.category }}">
+              {{ else }}
+                <img src="{{ $jpgPath | relURL }}" alt="{{ .Params.quoteAuthor }}" class="w-14 h-14 aspect-square rounded-full object-cover border-2 border-{{ .Params.category }}">
+              {{ end }}
+            {{ else }}
+              <!-- Use initials if no image exists -->
+              <div class="w-14 h-14 aspect-square rounded-full bg-{{ .Params.category }}-100 flex items-center justify-center text-{{ .Params.category }} border-2 border-{{ .Params.category }}">
+                {{/* Extract initials safely */}}
+                {{ $firstChar := "" }}
+                {{ $secondChar := "" }}
+                {{ $name := .Params.quoteAuthor }}
+                {{ $parts := split $name " " }}
+                
+                {{ if ge (len $name) 1 }}
+                  {{ $firstChar = substr $name 0 1 }}
+                {{ end }}
+                
+                {{ if gt (len $parts) 1 }}
+                  {{/* Get first char of last name */}}
+                  {{ $lastName := index $parts (sub (len $parts) 1) }}
+                  {{ if ge (len $lastName) 1 }}
+                    {{ $secondChar = substr $lastName 0 1 }}
+                  {{ end }}
+                {{ else }}
+                  {{/* For single names, take second character */}}
+                  {{ if ge (len $name) 2 }}
+                    {{ $secondChar = substr $name 1 1 }}
+                  {{ end }}
+                {{ end }}
+                
+                <span class="font-bold">{{ upper $firstChar }}{{ upper $secondChar }}</span>
+              </div>
+            {{ end }}
+          </div>
+          {{ end }}
+          
+          <!-- Quote -->
+          <div class="text-center">
+            <p class="text-sm text-gray-700 italic mb-1">
+              "{{ .Params.quote }}"
+            </p>
+            {{ if .Params.quoteAuthor }}
+            <p class="text-xs text-gray-500">— {{ .Params.quoteAuthor }}</p>
+            {{ end }}
+          </div>
+        </div>
+        {{ end }}
+      </div>
+    </a>
+    {{ end }}
+  </div>
+</div>
+{{ end }}

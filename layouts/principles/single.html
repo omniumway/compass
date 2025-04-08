@@ -1,0 +1,149 @@
+{{ define "main" }}
+<div class="max-w-5xl mx-auto px-4 py-8">
+  <!-- Back navigation -->
+  <a href="{{ print "principles/" .Params.category "/" | relURL }}" class="inline-flex items-center mb-6 text-gray-600 hover:text-gray-900 animate__animated animate__fadeIn">
+    <i class="ph ph-arrow-left mr-1"></i>
+    Back to {{ if eq .Params.category "simplicity" }}Simplicity{{ end }}{{ if eq .Params.category "patience" }}Patience{{ end }}{{ if eq .Params.category "compassion" }}Compassion{{ end }} Principles
+  </a>
+  
+  <div class="principle-card mb-8 animate__animated animate__{{ .Params.animation }} overflow-hidden rounded-lg shadow">
+    <div class="p-8">
+      <div class="flex items-start mb-6">
+        <div class="flex items-center">
+          <div class="w-14 h-14 aspect-square rounded-full bg-{{ .Params.category }} flex items-center justify-center text-white mr-4 animate__animated animate__heartBeat animate__delay-200ms">
+            <i class="ph ph-{{ .Params.icon }} text-xl"></i>
+          </div>
+          <h3 class="font-heading font-bold text-xl">{{ .Title }}</h3>
+        </div>
+      </div>
+      
+      <!-- Principle Content -->
+      <div class="mt-6 space-y-8">
+        <!-- Quote Section -->
+        {{ if .Params.quote }}
+        <div class="bg-gray-50 p-6 rounded-lg">
+          <!-- Centered Avatar -->
+          {{ if .Params.quoteAuthor }}
+          {{ $kebabName := lower (replace .Params.quoteAuthor " " "-") }}
+          {{ $pngPath := print "/images/avatars/" $kebabName ".png" }}
+          {{ $jpgPath := print "/images/avatars/" $kebabName ".jpg" }}
+          
+          <div class="flex justify-center mb-4">
+            {{ $avatarExists := fileExists (print "static" $pngPath) }}
+            {{ $jpgExists := fileExists (print "static" $jpgPath) }}
+            
+            {{ if or $avatarExists $jpgExists }}
+              <!-- Use actual image if it exists -->
+              {{ if $avatarExists }}
+                <img src="{{ $pngPath | relURL }}" alt="{{ .Params.quoteAuthor }}" class="w-20 h-20 aspect-square rounded-full object-cover border-2 border-{{ .Params.category }}">
+              {{ else }}
+                <img src="{{ $jpgPath | relURL }}" alt="{{ .Params.quoteAuthor }}" class="w-20 h-20 aspect-square rounded-full object-cover border-2 border-{{ .Params.category }}">
+              {{ end }}
+            {{ else }}
+              <!-- Use initials if no image exists -->
+              <div class="w-20 h-20 aspect-square rounded-full bg-{{ .Params.category }}-100 flex items-center justify-center text-{{ .Params.category }} border-2 border-{{ .Params.category }}">
+                {{/* Extract initials safely */}}
+                {{ $firstChar := "" }}
+                {{ $secondChar := "" }}
+                {{ $name := .Params.quoteAuthor }}
+                {{ $parts := split $name " " }}
+                
+                {{ if ge (len $name) 1 }}
+                  {{ $firstChar = substr $name 0 1 }}
+                {{ end }}
+                
+                {{ if gt (len $parts) 1 }}
+                  {{/* Get first char of last name */}}
+                  {{ $lastName := index $parts (sub (len $parts) 1) }}
+                  {{ if ge (len $lastName) 1 }}
+                    {{ $secondChar = substr $lastName 0 1 }}
+                  {{ end }}
+                {{ else }}
+                  {{/* For single names, take second character */}}
+                  {{ if ge (len $name) 2 }}
+                    {{ $secondChar = substr $name 1 1 }}
+                  {{ end }}
+                {{ end }}
+                
+                <span class="font-bold text-xl">{{ upper $firstChar }}{{ upper $secondChar }}</span>
+              </div>
+            {{ end }}
+          </div>
+          {{ end }}
+          
+          <!-- Quote Content -->
+          <div class="text-center">
+            <blockquote class="text-lg font-medium italic mb-2">
+              "{{ .Params.quote }}"
+            </blockquote>
+            {{ if .Params.quoteAuthor }}
+            <cite class="text-sm text-gray-600">— {{ .Params.quoteAuthor }}</cite>
+            {{ end }}
+          </div>
+          
+          <!-- Quote Context -->
+          {{ if .Params.quoteContext }}
+          <div class="mt-4 text-sm">
+            {{ .Params.quoteContext }}
+          </div>
+          {{ end }}
+        </div>
+        {{ end }}
+        
+        <!-- Principle Statement -->
+        {{ if .Params.principle }}
+        <div class="p-6 rounded-lg border-l-4 border-{{ .Params.category }} animate__animated animate__pulse animate__delay-100ms" style="background-color: rgba({{ if eq .Params.category "simplicity" }}59, 130, 246{{ end }}{{ if eq .Params.category "patience" }}76, 175, 80{{ end }}{{ if eq .Params.category "compassion" }}147, 51, 234{{ end }}, 0.1);">
+          <h4 class="font-heading font-semibold text-sm uppercase text-gray-500 mb-3">THE PRINCIPLE</h4>
+          <div class="font-heading font-semibold text-lg">{{ .Params.principle | markdownify }}</div>
+        </div>
+        {{ end }}
+        
+        <!-- Practice Section -->
+        {{ if .Params.practice }}
+        <div class="px-2">
+          <h4 class="font-heading font-semibold text-sm uppercase text-gray-500 mb-3">QUICK PRACTICE</h4>
+          <div class="text-base">{{ .Params.practice | markdownify }}</div>
+        </div>
+        {{ end }}
+        
+        <!-- Reflection Section -->
+        {{ if .Params.reflection }}
+        <div class="p-6 rounded-lg bg-gray-50">
+          <h4 class="font-heading font-semibold text-sm uppercase text-gray-500 mb-3">REFLECTION</h4>
+          <div class="text-base italic">{{ .Params.reflection | markdownify }}</div>
+        </div>
+        {{ end }}
+      </div>
+      
+      <!-- Card Actions -->
+      <div class="flex justify-between items-center mt-8">
+        <!-- <button class="flex items-center gap-2 px-4 py-2 text-sm text-gray-600 rounded-md hover:bg-gray-100 animate__animated animate__heartBeat animate__delay-500ms">
+          <i class="ph ph-bookmark"></i>
+          Save
+        </button>
+         -->
+        <!-- Moved Category Badge Here -->
+        <span class="px-3 py-1 rounded-full text-xs font-medium badge-{{ .Params.category }}">
+          {{ if eq .Params.category "simplicity" }}Simplicity{{ end }}
+          {{ if eq .Params.category "patience" }}Patience{{ end }}
+          {{ if eq .Params.category "compassion" }}Compassion{{ end }}
+        </span>
+        
+        <div>
+          {{ with .PrevInSection }}
+          <a href="{{ .Permalink }}" class="p-2 mx-1 text-gray-600 rounded-md hover:bg-gray-100">
+            <i class="ph ph-arrow-left"></i>
+          </a>
+          {{ end }}
+          
+          {{ with .NextInSection }}
+          <a href="{{ .Permalink }}" class="p-2 mx-1 text-gray-600 rounded-md hover:bg-gray-100">
+            <i class="ph ph-arrow-right"></i>
+          </a>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{{ end }}

@@ -1,0 +1,30 @@
+baseURL = "/"
+relativeURLs = true
+languageCode = "en-us"
+title = "Athlete's Compass"
+
+[params]
+  description = "Mindfulness principles for young soccer players"
+  
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "Principles"
+    url = "/principles/"
+    weight = 2
+  [[menu.main]]
+    name = "Situations"
+    url = "/situations/"
+    weight = 3
+
+[taxonomies]
+  category = "categories"
+  situation = "situations"
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+  section = ["HTML", "RSS", "JSON"]
+  page = ["HTML"]

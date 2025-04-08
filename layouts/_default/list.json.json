@@ -1,0 +1,25 @@
+{
+  "principles": [
+    {{ $pages := where .Site.Pages "Section" "principles" }}
+    {{ $filteredPages := where $pages "Kind" "page" }}
+    {{ $sortedPages := sort $filteredPages "Weight" }}
+    {{ $length := len $sortedPages }}
+    {{ range $index, $page := $sortedPages }}
+    {
+      "title": {{ .Title | jsonify }},
+      "category": {{ .Params.category | jsonify }},
+      "icon": {{ .Params.icon | jsonify }},
+      "animation": {{ .Params.animation | jsonify }},
+      "weight": {{ .Weight }},
+      "permalink": {{ .Permalink | jsonify }},
+      "quote": {{ .Params.quote | jsonify }},
+      "quoteAuthor": {{ .Params.quoteAuthor | jsonify }},
+      "quoteContext": {{ .Params.quoteContext | jsonify }},
+      "principle": {{ .Params.principle | jsonify }},
+      "practice": {{ .Params.practice | jsonify }},
+      "reflection": {{ .Params.reflection | jsonify }},
+      "situations": {{ .Params.situations | jsonify }}
+    }{{ if ne (add $index 1) $length }},{{ end }}
+    {{ end }}
+  ]
+}

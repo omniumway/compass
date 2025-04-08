@@ -1,0 +1,17 @@
+<div class="footer-spacer h-20"></div>
+<footer class="fixed bottom-0 left-0 max-w-2xl w-full bg-white border-t border-gray-200 shadow-lg z-50">
+  <div class="grid grid-cols-3 w-full items-center py-3">
+    <a href="{{ .Site.BaseURL | relURL }}" class="text-center flex flex-col items-center py-2">
+      <i class="ph ph-house text-2xl"></i>
+      <span class="text-xs mt-2">Home</span>
+    </a>
+    <a href="{{ "principles/" | relURL }}" class="text-center flex flex-col items-center py-2">
+      <i class="ph ph-book-open text-2xl"></i>
+      <span class="text-xs mt-2">Principles</span>
+    </a>
+    <a href="{{ "situations/" | relURL }}" class="text-center flex flex-col items-center py-2">
+      <i class="ph ph-lifebuoy text-2xl"></i>
+      <span class="text-xs mt-2">Help</span>
+    </a>
+  </div>
+</footer>

@@ -1,0 +1,386 @@
+{
+  "principles": [
+    {
+      "title": "True North",
+      "category": "simplicity",
+      "icon": "compass-rose",
+      "slug": "true-north",
+      "principle": "**True North**: When the game feels too complicated, return to your center. Focus on one simple truth—your position, the ball, your breath—and let everything else organize around that point.",
+      "practice": "Before your next match, choose your \"True North\"—one simple focus point when things get confusing. It might be feeling your feet on the ground, tracking the ball, or remembering your positioning. When overwhelmed, return to this one point.",
+      "reflection": "What single focus point helps you feel centered when football seems too complicated?",
+      "quote": {
+        "author": "Johan Cruyff",
+        "text": "Playing football is very simple, but playing simple football is the hardest thing there is.",
+        "context": "When Cruyff speaks about simplicity in football, he's describing what we call True North - the understanding that beneath all the complexity of the game lies a simple core. Finding that simplicity gives you a reference point to return to when the game feels overwhelming."
+      },
+      "situations": [
+        "game-pressure",
+        "overwhelm"
+      ],
+      "weight": 1
+    },
+    {
+      "title": "The Invisible Game",
+      "category": "simplicity",
+      "icon": "chess",
+      "slug": "the-invisible-game",
+      "principle": "**The Invisible Game**: Beyond the visible game of players, ball, and goals exists an invisible game of space, time, and energy. Learn to see and play this hidden dimension where the real game unfolds.",
+      "practice": "Watch 10 minutes of a professional match with the sound off. Don't focus on the ball—instead, observe the spaces opening and closing, the timing of runs, and the energy shifts between teams. Notice how the best players seem aware of this invisible game.",
+      "reflection": "What aspects of the invisible game do you notice most during play? How might you become more sensitive to them?",
+      "quote": {
+        "author": "Xavi Hernandez",
+        "text": "It's all about creating space. Space, space, space. It's like being on the PlayStation. I think 'I'll wait... wait... wait... then BOOM! I've got space.'",
+        "context": "When Xavi describes his approach to finding space, he's revealing his mastery of The Invisible Game. He sees patterns that others don't - the spaces between players, the timing of movements, the rhythm of play. His success came from seeing and understanding this invisible dimension of football that exists beyond the physical."
+      },
+      "situations": [
+        "tactical-awareness",
+        "vision"
+      ],
+      "weight": 3
+    },
+    {
+      "title": "Present Foot",
+      "category": "simplicity",
+      "icon": "footprints",
+      "slug": "present-foot",
+      "principle": "**Present Foot**: Your body plays football in the present moment, but your mind often travels to the past or future. When you align your attention with where your feet are right now, your natural abilities flow without interference.",
+      "practice": "In your next training session, whenever you notice your mind worrying about outcomes or replaying mistakes, silently say \"present foot\" and bring your full attention to the physical sensation of your feet—touching the ground, contacting the ball, or moving through space.",
+      "reflection": "When during matches does your mind most often leave the present moment? How might \"present foot\" help in those situations?",
+      "quote": {
+        "author": "Thierry Henry",
+        "text": "In football you always have to be thinking, thinking, thinking. You have to be switched on.",
+        "context": "When Henry talks about being \"switched on,\" he's describing the intense focus required to stay present in the game. His success came from this ability to remain completely focused on the immediate moment - not dwelling on past mistakes or worrying about future outcomes."
+      },
+      "situations": [
+        "distraction",
+        "overthinking"
+      ],
+      "weight": 4
+    },
+    {
+      "title": "Empty Cup",
+      "category": "simplicity",
+      "icon": "cup",
+      "slug": "empty-cup",
+      "principle": "**Empty Cup**: To receive new learning, first empty your cup of what you think you know. When you approach football with a beginner's mind—curious and open—insights and improvements flow naturally.",
+      "practice": "In your next training session, choose one basic skill you believe you've already mastered. Approach it as if learning it for the first time—with curiosity and no assumptions. Notice what new details emerge when you empty your cup of previous knowledge.",
+      "reflection": "What aspects of your game do you hold most rigidly to \"the right way\" of doing things? How might emptying your cup create space for growth?",
+      "quote": {
+        "author": "Pep Guardiola",
+        "text": "I am still learning, and I hope I will continue to learn all my life.",
+        "context": "When Guardiola speaks about continual learning, he embodies the Empty Cup principle. Despite being one of football's most successful managers, his humility and willingness to approach each situation with fresh eyes has been the cornerstone of his sustained success. He empties his cup of preconceptions to make room for new insights."
+      },
+      "situations": [
+        "learning",
+        "adaptability"
+      ],
+      "weight": 5
+    },
+    {
+      "title": "Doing Without Doing",
+      "category": "simplicity",
+      "icon": "wind",
+      "slug": "doing-without-doing",
+      "principle": "**Doing Without Doing**: The most effective action is often indirect. Instead of forcing an outcome through direct effort, create conditions where the desired result happens naturally, with minimal resistance.",
+      "practice": "In your next match, before receiving the ball, look for ways your positioning can solve problems in advance. Can you move to create space for a teammate? Can you position yourself so that a simple touch automatically evades pressure? Focus on how minimal movements can produce maximum effects.",
+      "reflection": "When have you experienced moments where the game seemed to flow through you effortlessly? What conditions helped create that state?",
+      "quote": {
+        "author": "Pep Guardiola",
+        "text": "Move the opponent, not the ball.",
+        "context": "When Guardiola talks about moving opponents rather than the ball, he's describing the essence of Doing Without Doing. The greatest achievements in football often come not through direct force, but by creating situations where the desired outcome happens naturally - making the opponent move where you want them, opening spaces without directly creating them."
+      },
+      "situations": [
+        "flow-state",
+        "effortless-action"
+      ],
+      "weight": 6
+    },
+    {
+      "title": "The Uncarved Block",
+      "category": "simplicity",
+      "icon": "cube",
+      "slug": "the-uncarved-block",
+      "principle": "**The Uncarved Block**: Your natural state contains everything you need. Before techniques and tactics shaped your play, you possessed a pure connection to the game. Return to this uncarved simplicity to rediscover your most authentic football.",
+      "practice": "Find 15 minutes to play alone with no specific goal or drill. Just you and the ball. Move however feels natural and enjoyable. Notice what kinds of touches, moves, or rhythms emerge when you're not trying to perform or improve, but simply expressing your natural relationship with the ball.",
+      "reflection": "What aspects of your natural playing style have been \"carved away\" by coaching or comparison to others? How might you reclaim these authentic elements?",
+      "quote": {
+        "author": "Ronaldinho",
+        "text": "I learned all about life with a ball at my feet.",
+        "context": "When Ronaldinho speaks about learning life through football, he's describing his natural connection to The Uncarved Block principle. His joyful, creative style emerged not from rigid training but from allowing his authentic self to shine through the game. His most brilliant moments came when he played with childlike freedom, uncarved by excessive structure."
+      },
+      "situations": [
+        "natural-talent",
+        "authenticity"
+      ],
+      "weight": 7
+    },
+    {
+      "title": "The Power Pause",
+      "category": "patience",
+      "icon": "pause",
+      "slug": "the-power-pause",
+      "principle": "**The Power Pause**: Between stimulus and response lies a space. In that space lies your freedom and power. The longer you can pause before reacting, the more choices become available to you.",
+      "practice": "In your next match, when you receive the ball under pressure, take a deliberate half-second pause before deciding what to do. Don't freeze—just create a small mental space to survey options before acting. Notice how this tiny pause can reveal options that might otherwise be missed.",
+      "reflection": "When do you feel most rushed or pressured to make immediate decisions in football? How might a Power Pause help in those moments?",
+      "quote": {
+        "author": "Andrea Pirlo",
+        "text": "I don't feel pressure... I spent the afternoon of Sunday, July 9, 2006 in Berlin sleeping and playing the PlayStation. In the evening, I went out and won the World Cup.",
+        "context": "When Pirlo describes his relaxed approach before the World Cup final, he's demonstrating the essence of The Power Pause. In football's most pressured moments, he understood that mental calmness - creating space between stimulus and response - was his greatest advantage. His famous penalties and precise passes came from this ability to pause internally while everyone else rushed."
+      },
+      "situations": [
+        "pressure",
+        "decision-making"
+      ],
+      "weight": 8
+    },
+    {
+      "title": "The Quiet Space",
+      "category": "patience",
+      "icon": "spiral",
+      "slug": "the-quiet-space",
+      "principle": "**The Quiet Space**: Your mind naturally fills with noise—commentary, doubts, and mental chatter. By creating a quiet space inside, you can hear your own football intelligence more clearly and play with greater clarity.",
+      "practice": "Before your next match, find a quiet place and practice 2 minutes of focused breathing. As you breathe, imagine creating a quiet space inside yourself where your football instincts can speak clearly. During the match, when mental noise increases, take one deep breath to recall this quiet space.",
+      "reflection": "What kinds of mental \"noise\" most often distract you during matches? How might finding your inner quiet space help manage these distractions?",
+      "quote": {
+        "author": "Zlatan Ibrahimović",
+        "text": "If I had played in England I would have destroyed it, like I have everywhere else.",
+        "context": "When Ibrahimović makes such bold statements, he reveals his mastery of The Quiet Space. Behind his confident words lies an ability to silence the doubt, criticism, and external noise that might otherwise affect his performance. His mental strength comes from creating a quiet inner space where his self-belief remains undisturbed by outside opinions."
+      },
+      "situations": [
+        "mental-noise",
+        "confidence"
+      ],
+      "weight": 9
+    },
+    {
+      "title": "The Reset Button",
+      "category": "patience",
+      "icon": "arrow-clockwise",
+      "slug": "the-reset-button",
+      "principle": "**The Reset Button**: Every moment offers a fresh start. No matter what happened in the previous play, the previous half, or the previous match, you can always press the reset button and begin again with a clear mind.",
+      "practice": "Choose a physical gesture to serve as your \"reset button\"—perhaps taking a deep breath while adjusting your socks, or quickly touching the ground. In your next match, use this gesture deliberately after mistakes or when feeling frustrated to clear your mind and refocus on the present moment.",
+      "reflection": "How do you currently respond to mistakes or setbacks during a match? How might having a consistent \"reset button\" change your ability to recover quickly?",
+      "quote": {
+        "author": "Cristiano Ronaldo",
+        "text": "Your love makes me strong, your hate makes me unstoppable.",
+        "context": "When Ronaldo speaks about transforming both love and hate into motivation, he demonstrates his mastery of The Reset Button. Throughout his career, he's shown an remarkable ability to reset after setbacks - missed penalties, losses, or criticism - channeling emotional responses into renewed determination. His mental resilience comes from this ability to continually refresh his mindset regardless of what came before."
+      },
+      "situations": [
+        "mistakes",
+        "setbacks"
+      ],
+      "weight": 10
+    },
+    {
+      "title": "The Perfect Level",
+      "category": "patience",
+      "icon": "stairs",
+      "slug": "the-perfect-level",
+      "principle": "**The Perfect Level**: Growth happens step by step, not all at once. The perfect level of challenge is the one right in front of you—not too easy, not too hard, but just challenging enough to stretch your abilities.",
+      "practice": "Identify one specific aspect of your game you want to improve. Break it down into five progressively difficult levels, with Level 1 being slightly challenging but achievable and Level 5 being your ultimate goal. Focus solely on mastering Level 1 before considering Level 2, no matter how eager you are to progress faster.",
+      "reflection": "Where in your football development do you feel most impatient? How might focusing on the \"perfect level\" right in front of you lead to better long-term progress?",
+      "quote": {
+        "author": "Lionel Messi",
+        "text": "The day you think there is no improvements to be made is a sad one for any player.",
+        "context": "When Messi speaks about continuous improvement, he's revealing his understanding of The Perfect Level. Despite being widely considered the greatest player ever, his mindset remains focused on incremental growth rather than reaching some fixed endpoint. His humility in always seeking the next small improvement has been key to his sustained excellence over decades."
+      },
+      "situations": [
+        "development",
+        "frustration"
+      ],
+      "weight": 11
+    },
+    {
+      "title": "Yielding Water",
+      "category": "patience",
+      "icon": "waves",
+      "slug": "yielding-water",
+      "principle": "**Yielding Water**: Water doesn't fight obstacles—it flows around them. When faced with resistance, don't force your way through. Instead, yield and find the natural path forward, like water flowing downhill.",
+      "practice": "In your next match, when faced with a defender or tactical obstacle, consciously avoid your first instinct to force through it. Instead, imagine yourself as flowing water, seeking the path of least resistance. Notice what alternative options become visible when you adopt this yielding mindset.",
+      "reflection": "When do you find yourself most likely to \"force\" solutions in football? What might change if you approached those situations with the adaptability of flowing water?",
+      "quote": {
+        "author": "Xavi Hernandez",
+        "text": "For me, when I pause to think against a team that defends deep, I lose my effectiveness.",
+        "context": "When Xavi describes losing effectiveness when he overthinks, he's touching on the heart of Yielding Water. His greatest moments came from flowing naturally around obstacles rather than forcing his way through them. Like water finding the path of least resistance, Xavi's genius was adapting his play to whatever space was available, yielding to resistance rather than fighting against it."
+      },
+      "situations": [
+        "adaptability",
+        "obstacles"
+      ],
+      "weight": 12
+    },
+    {
+      "title": "Subtle Illumination",
+      "category": "patience",
+      "icon": "lighthouse",
+      "slug": "subtle-illumination",
+      "principle": "**Subtle Illumination**: Solutions often appear when you stop searching for them. By relaxing your focus and creating space for intuition to speak, answers emerge naturally, like a light slowly brightening.",
+      "practice": "In training, identify a skill or tactical understanding you've been struggling with. Practice it intensely for 15 minutes, then completely let go of trying to solve it—play freely without focusing on that specific element. Notice if insights or improvements arise when you've stopped consciously seeking them.",
+      "reflection": "When have you experienced moments of unexpected clarity or insight in football? What conditions seemed to support these moments of subtle illumination?",
+      "quote": {
+        "author": "Lionel Messi",
+        "text": "The best decisions aren't made with your mind, but with your instinct.",
+        "context": "When Messi speaks about trusting instinct over deliberate thinking, he's describing the essence of Subtle Illumination. His most brilliant moments on the field come not from overthinking but from allowing his intuitive understanding to emerge naturally. His genius lies in creating the conditions where subtle insights can arise, then trusting them when they appear."
+      },
+      "situations": [
+        "creativity",
+        "insight"
+      ],
+      "weight": 13
+    },
+    {
+      "title": "Return to Source",
+      "category": "patience",
+      "icon": "arrows-in",
+      "slug": "return-to-source",
+      "principle": "**Return to Source**: When the game becomes complicated, stressful, or joyless, return to your original source of inspiration. Reconnect with the pure joy and love that first drew you to football.",
+      "practice": "Take 10 minutes to play with a ball in a way that reconnects you with the joy of the game. No drills, no pressure—just play. It might be juggling, trying tricks, or simply passing against a wall. Focus on the sensations and enjoyment that first made you fall in love with football.",
+      "reflection": "What aspects of football still connect you to that original joy? How might you incorporate more of these elements into your regular training and matches?",
+      "quote": {
+        "author": "Zinedine Zidane",
+        "text": "Sometimes words are harder than blows.",
+        "context": "When Zidane reflects on how words can hurt more than physical blows, he touches on the emotional dimension of football that connects to Return to Source. His career showed both the brilliance of playing from joy and connection, as well as the consequences of disconnection, as in his World Cup final sending off. His journey reminds us of the importance of returning to our original motivation and love for the game, especially in difficult moments."
+      },
+      "situations": [
+        "burnout",
+        "joy"
+      ],
+      "weight": 14
+    },
+    {
+      "title": "The Echo Effect",
+      "category": "compassion",
+      "icon": "waves-triangle",
+      "slug": "the-echo-effect",
+      "principle": "**The Echo Effect**: How you treat yourself and others creates ripples that return to you. Kindness, patience, and support echo back as team cohesion, while criticism and judgment create disconnection. The team environment you experience is the echo of what you contribute.",
+      "practice": "For one week, make a conscious effort to add one more positive comment or supportive gesture for every teammate in each training session or match. This might be a word of encouragement after a mistake, recognition of good effort, or simply using their name positively. Notice how the team atmosphere shifts as these positive echoes accumulate.",
+      "reflection": "How does your current communication style with teammates echo back to affect your own experience of the game? What small changes might create more positive echoes?",
+      "quote": {
+        "author": "David Beckham",
+        "text": "Respect is very important. I believe respect is more important than many things that we talk about in football.",
+        "context": "When Beckham emphasizes respect in football, he's recognizing The Echo Effect in action. Throughout his career, his leadership was built on showing respect to teammates, opponents, and fans alike - creating a positive echo that returned to him. His understanding that how we treat others reverberates throughout a team explains why he was able to create positive cultures in every club he joined."
+      },
+      "situations": [
+        "team-culture",
+        "leadership"
+      ],
+      "weight": 15
+    },
+    {
+      "title": "The Courage Corner",
+      "category": "compassion",
+      "icon": "shield",
+      "slug": "the-courage-corner",
+      "principle": "**The Courage Corner**: Fear and doubt are normal parts of every footballer's journey. Instead of fighting these feelings, create a courage corner in your mind—a safe space where you can acknowledge fears while still moving forward with self-compassion and bravery.",
+      "practice": "Before your next challenging football situation, take a moment to visualize your \"courage corner\"—a mental space where you can honestly acknowledge any fears or doubts. Imagine speaking to these fears with compassion, saying: \"It's okay to feel nervous. I'm still showing up.\" Notice how this compassionate acknowledgment often reduces the fear's power over you.",
+      "reflection": "What specific fears or doubts most often hold you back in football? How might acknowledging them with self-compassion, rather than trying to ignore them, change your relationship with these fears?",
+      "quote": {
+        "author": "Megan Rapinoe",
+        "text": "Be more. Be better. Be bigger than you've ever been before.",
+        "context": "When Rapinoe challenges us to be bigger than we've ever been, she's inviting us to find The Courage Corner within ourselves. Her career has been defined by courage - both on the field with decisive penalty kicks in crucial moments, and off the field standing up for equality. Her message reminds us that true compassion includes having the courage to believe in your own potential and to take bold action."
+      },
+      "situations": [
+        "fear",
+        "self-doubt"
+      ],
+      "weight": 16
+    },
+    {
+      "title": "The Inner Scoreboard",
+      "category": "compassion",
+      "icon": "chalkboard",
+      "slug": "the-inner-scoreboard",
+      "principle": "**The Inner Scoreboard**: External measures of success—goals, wins, selections—are only part of your football journey. Develop an inner scoreboard that tracks growth, effort, courage, and enjoyment—elements you can control regardless of external outcomes.",
+      "practice": "Create a personal \"Inner Scoreboard\" with three to five qualities you value that aren't measured on the official scoreboard. Examples might include \"full effort,\" \"positive communication,\" or \"brave decision-making.\" After your next match, take two minutes to rate yourself only on these internal measures, regardless of the game's result.",
+      "reflection": "What do you currently measure as \"success\" in your football? How might developing a more compassionate inner scoreboard change your experience of the game?",
+      "quote": {
+        "author": "Jurgen Klopp",
+        "text": "I'm not a genius, I need other people to get the perfect information. When we win, we win together. When we lose, I lose.",
+        "context": "When Klopp takes personal responsibility for losses while distributing credit for wins, he's demonstrating his understanding of The Inner Scoreboard. His leadership is built on valuing effort, growth, and collective achievement over external validation or personal glory. This compassionate approach to measuring success has allowed him to build resilient teams that bounce back from setbacks and maintain perspective beyond just the scoreboard."
+      },
+      "situations": [
+        "comparison",
+        "expectations"
+      ],
+      "weight": 17
+    },
+    {
+      "title": "Beginner's Mind",
+      "category": "compassion",
+      "icon": "plant",
+      "slug": "beginners-mind",
+      "principle": "**Beginner's Mind**: Approach each training and match with the fresh eyes of a beginner—curious, open, and eager to learn. Release the need to appear expert or perfect, and instead embrace the continuous growth that comes from a learner's mindset.",
+      "practice": "In your next training session, choose one fundamental skill you consider yourself already proficient in. Approach it with \"beginner's mind\" by asking yourself: \"If I were learning this for the first time, what would I notice?\" Look for new details, sensations, or possibilities as if experiencing this skill for the first time.",
+      "reflection": "In what areas of your football do you feel most fixed in your ways or resistant to new approaches? How might bringing a beginner's mind to these areas create new possibilities?",
+      "quote": {
+        "author": "Kylian Mbappé",
+        "text": "I've always said I want to write my story in football... but even I didn't think things would go this quickly.",
+        "context": "When Mbappé expresses surprise at his rapid rise, he reveals the Beginner's Mind that has been crucial to his development. Despite his immense talent, he approaches football with the humility and openness of a beginner, allowing him to absorb new learning without the obstacle of thinking he already knows everything. His perspective combines confidence in writing his own story with the openness to be surprised by how it unfolds."
+      },
+      "situations": [
+        "learning",
+        "plateaus"
+      ],
+      "weight": 18
+    },
+    {
+      "title": "Knowing Enough",
+      "category": "compassion",
+      "icon": "mirror",
+      "slug": "knowing-enough",
+      "principle": "**Knowing Enough**: You can't control everything in football—the referee, the weather, your opponent's tactics. True composure comes from having the wisdom to know which elements you can control, the courage to address those elements, and the serenity to accept the rest.",
+      "practice": "Create two columns on a piece of paper labeled \"Within My Control\" and \"Outside My Control.\" List at least five elements of your football in each column. Before your next match or training, review this list and set an intention to focus your energy only on the elements within your control, while practicing acceptance of the rest.",
+      "reflection": "What aspects of football do you currently waste energy trying to control that are actually outside your influence? How might redirecting that energy toward controllable elements change your experience?",
+      "quote": {
+        "author": "Carli Lloyd",
+        "text": "I only do things within my power. If I can't control something, I just move on.",
+        "context": "When Lloyd describes focusing only on what's within her control, she's demonstrating the wisdom of Knowing Enough. Her remarkable career, including scoring three goals in a World Cup final, was built on this compassionate discernment - understanding what she could influence and accepting what she couldn't. This approach allowed her to direct her energy efficiently and maintain peace of mind even in high-pressure situations."
+      },
+      "situations": [
+        "control",
+        "acceptance"
+      ],
+      "weight": 19
+    },
+    {
+      "title": "Perfect Imperfection",
+      "category": "compassion",
+      "icon": "shapes",
+      "slug": "perfect-imperfection",
+      "principle": "**Perfect Imperfection**: The pursuit of flawless football creates tension and prevents natural expression. Embrace your perfect imperfection—the unique combination of strengths and weaknesses that make you the player you are—and you'll find greater freedom and authenticity in your play.",
+      "practice": "After your next match, take a few minutes to write down three \"imperfections\" in your game that are actually connected to your strengths. For example, \"Sometimes I lose possession trying creative passes\" might be connected to your strength as a visionary playmaker. Practice viewing these not as flaws to eliminate, but as natural aspects of your authentic playing style.",
+      "reflection": "How has the pursuit of \"perfect\" football created tension or limitation in your game? What might change if you embraced your perfect imperfection instead?",
+      "quote": {
+        "author": "Zlatan Ibrahimović",
+        "text": "I can't help but laugh at how perfect I am.",
+        "context": "When Ibrahimović makes such bold, seemingly arrogant statements, he's actually demonstrating the principle of Perfect Imperfection with a twist of humor. Behind his confidence is an understanding that embracing his unique style - with all its strengths and limitations - is more powerful than trying to fit a conventional mold. His comfort with his entire self, including the imperfections, has been the foundation of his extraordinary career and longevity."
+      },
+      "situations": [
+        "mistakes",
+        "self-criticism"
+      ],
+      "weight": 20
+    },
+    {
+      "title": "The Generous Player",
+      "category": "compassion",
+      "icon": "handshake",
+      "slug": "the-generous-player",
+      "principle": "**The Generous Player**: The more you give in football, the more you receive. Generosity with encouragement, effort, and opportunity creates a positive cycle that elevates both the team and your individual experience. True football wealth comes not from hoarding success but from sharing it.",
+      "practice": "In your next match, set an intention to look for one generous opportunity with each teammate. This might be setting them up for success with a well-timed pass, offering specific encouragement after a mistake, or highlighting their contribution to the coach or other teammates. Notice how this mindset shifts your experience of the game.",
+      "reflection": "In what areas of your football could you practice more generosity? How might this generosity actually enhance rather than diminish your own enjoyment and development?",
+      "quote": {
+        "author": "Lionel Messi",
+        "text": "The objective is to win with all the team, personal records are secondary.",
+        "context": "When Messi emphasizes team success over personal records, he's embodying The Generous Player principle. Despite holding numerous individual records, his approach has always been one of generosity - making teammates better, celebrating their success, and prioritizing collective achievement. This generosity of spirit, both with the ball and in his attitude, has paradoxically allowed him to reach greater individual heights than a self-centered approach ever could."
+      },
+      "situations": [
+        "teamwork",
+        "selfishness"
+      ],
+      "weight": 21
+    }
+  ],
+  "generatedAt": "2025-04-01T13:15:31.436Z",
+  "count": 20
+}

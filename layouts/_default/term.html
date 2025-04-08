@@ -1,0 +1,59 @@
+{{ define "main" }}
+  <div class="container mx-auto px-4 py-6">
+    <div class="flex items-center mb-6 animate__animated animate__fadeIn">
+      <a href="{{ "situations/" | relURL }}" class="mr-3 btn btn-circle btn-sm btn-ghost">
+        <i class="ph ph-arrow-left"></i>
+      </a>
+      <h1 class="font-heading font-bold text-2xl">{{ .Title }}</h1>
+    </div>
+    
+    <div class="grid grid-cols-1 gap-4">
+      {{ range $index, $page := .Pages }}
+        {{ $category := "" }}
+        {{ with $page.Params.category }}{{ $category = . }}{{ end }}
+        
+        <a href="{{ $page.Permalink }}" class="principle-card rounded-lg shadow hover:shadow-lg transition-shadow animate__animated animate__fadeInUp" style="animation-delay: {{ mul $index 0.05 }}s;">
+          <div class="p-4">
+            <div class="flex items-center gap-4">
+              <div class="flex-shrink-0">
+                {{ if eq $category "simplicity" }}
+                  <div class="w-12 h-12 aspect-square rounded-full bg-simplicity flex items-center justify-center text-white">
+                    <i class="ph {{ with $page.Params.icon }}ph-{{ . }}{{ else }}ph-compass{{ end }} text-xl"></i>
+                  </div>
+                {{ else if eq $category "patience" }}
+                  <div class="w-12 h-12 aspect-square rounded-full bg-patience flex items-center justify-center text-white">
+                    <i class="ph {{ with $page.Params.icon }}ph-{{ . }}{{ else }}ph-timer{{ end }} text-xl"></i>
+                  </div>
+                {{ else if eq $category "compassion" }}
+                  <div class="w-12 h-12 aspect-square rounded-full bg-compassion flex items-center justify-center text-white">
+                    <i class="ph {{ with $page.Params.icon }}ph-{{ . }}{{ else }}ph-heart{{ end }} text-xl"></i>
+                  </div>
+                {{ else }}
+                  <div class="w-12 h-12 aspect-square rounded-full bg-primary flex items-center justify-center text-white">
+                    <i class="ph {{ with $page.Params.icon }}ph-{{ . }}{{ else }}ph-star{{ end }} text-xl"></i>
+                  </div>
+                {{ end }}
+              </div>
+              
+              <div class="flex-grow">
+                <h3 class="font-heading font-bold text-lg">{{ $page.Title }}</h3>
+                {{ if $category }}
+                  <div class="flex items-center mt-1">
+                    <!-- <span class="badge rounded-full badge-{{ $category }} badge-sm mr-2">{{ $category }}</span> -->
+                    {{ if $page.Params.quoteAuthor }}
+                      <span class="text-xs opacity-70">{{ $page.Params.quoteAuthor }}</span>
+                    {{ end }}
+                  </div>
+                {{ end }}
+              </div>
+              
+              <div class="flex-shrink-0">
+                <i class="ph ph-arrow-right text-lg"></i>
+              </div>
+            </div>
+          </div>
+        </a>
+      {{ end }}
+    </div>
+  </div>
+{{ end }}

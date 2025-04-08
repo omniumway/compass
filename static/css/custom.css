@@ -1,0 +1,49 @@
+/* Custom components */
+.principle-card {
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+  }
+  .principle-card:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  .badge-simplicity {
+    background-color: #3B82F6;
+    color: white;
+  }
+  .badge-patience {
+    background-color: #4CAF50;
+    color: white;
+  }
+  .badge-compassion {
+    background-color: #9333EA;
+    color: white;
+  }
+  .bg-simplicity {
+    background-color: #3B82F6;
+  }
+  .bg-patience {
+    background-color: #4CAF50;
+  }
+  .bg-compassion {
+    background-color: #9333EA;
+  }
+  .text-simplicity {
+    color: #3B82F6;
+  }
+  .text-patience {
+    color: #4CAF50;
+  }
+  .text-compassion {
+    color: #9333EA;
+  }
+  .border-simplicity {
+    border-color: #3B82F6;
+  }
+  .border-patience {
+    border-color: #4CAF50;
+  }
+  .border-compassion {
+    border-color: #9333EA;
+  }

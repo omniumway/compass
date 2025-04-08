@@ -1,0 +1,35 @@
+{{ define "main" }}
+  <div class="container mx-auto px-4 py-6">
+    <h1 class="font-heading font-bold text-2xl mb-6 animate__animated animate__fadeIn">{{ .Title }}</h1>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {{ $icons := slice "lifebuoy" "crosshair" "heartbeat" "lightbulb" "meditation" "pulse" "brain" "sparkle" "leaf" "smiley" }}
+      {{ $colors := slice "success" "warning" "error" "info" "primary" "secondary" "accent" }}
+      
+      {{ range $index, $page := .Pages }}
+        {{ $iconIndex := mod $index (len $icons) }}
+        {{ $colorIndex := mod $index (len $colors) }}
+        {{ $icon := index $icons $iconIndex }}
+        {{ $color := index $colors $colorIndex }}
+        
+        <a href="{{ $page.Permalink }}" class="principle-card rounded-lg hover:shadow-lg transition-shadow animate__animated animate__fadeInUp" style="animation-delay: {{ mul $index 0.05 }}s;">
+          <div class="p-5">
+            <div class="flex items-center mb-3">
+              <div class="w-12 h-12 aspect-square rounded-full bg-{{ $color }} flex items-center justify-center text-white mr-3">
+                <i class="ph ph-{{ $icon }} text-xl"></i>
+              </div>
+              <h3 class="font-heading font-semibold text-lg">{{ $page.Title }}</h3>
+            </div>
+            
+            <div class="flex justify-between items-center mt-3">
+              <span class="badge badge-outline">{{ len $page.Pages }} principles</span>
+              <div class="text-{{ $color }}">
+                <i class="ph ph-arrow-right text-lg"></i>
+              </div>
+            </div>
+          </div>
+        </a>
+      {{ end }}
+    </div>
+  </div>
+{{ end }}

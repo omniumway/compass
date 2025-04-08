@@ -1,0 +1,10 @@
+{{ define "main" }}
+  <h1 class="text-3xl font-bold">{{ .Title }}</h1>
+  <div class="mt-4">
+    {{ range .Pages }}
+      <div class="mb-4">
+        <a href="{{ .Permalink }}" class="text-blue-600 hover:underline">{{ .Title }}</a>
+      </div>
+    {{ end }}
+  </div>
+{{ end }}

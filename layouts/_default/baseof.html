@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="nord">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#5E81AC">
+  <meta name="color-scheme" content="light dark">
+  <base href="{{ .Site.BaseURL }}">
+  <title>{{ if .Title }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
+  <link rel="manifest" href="{{ "manifest.json" | relURL }}">
+  <link rel="icon" type="image/png" href="{{ "icons/icon-192x192.png" | relURL }}">
+  <link rel="apple-touch-icon" href="{{ "icons/apple-touch-icon.png" | relURL }}">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  
+  <!-- CSS -->
+  {{ $styles := resources.Get "css/main.css" | css.PostCSS }}
+  {{ if hugo.IsProduction }}
+    {{ $styles = $styles | minify | fingerprint }}
+  {{ end }}
+  <link rel="stylesheet" href="{{ $styles.RelPermalink }}">
+  
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  
+  <!-- Phosphor Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  
+  <!-- Markdown-it for rendering markdown in JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/markdown-it/13.0.1/markdown-it.min.js"></script>
+  
+  <!-- Theme Handling -->
+  <script>
+    // Check for prefers-color-scheme
+    function setThemeBasedOnPreference() {
+      // Check if user has a stored preference
+      const storedTheme = localStorage.getItem('theme');
+      if (storedTheme) {
+        document.documentElement.setAttribute('data-theme', storedTheme);
+        return;
+      }
+
+      // Apply theme based on user preference
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.documentElement.setAttribute('data-theme', 'sunset');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'nord');
+      }
+
+      // Listen for changes in the color scheme
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+        const newTheme = e.matches ? 'sunset' : 'nord';
+        document.documentElement.setAttribute('data-theme', newTheme);
+      });
+    }
+
+    // Set initial theme
+    setThemeBasedOnPreference();
+  </script>
+  
+  <!-- No longer need to load principles data via JavaScript - using Hugo's static generation -->
+  
+  <!-- PWA registration -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('{{ "service-worker.js" | relURL }}')
+          .then(registration => {
+            console.log('ServiceWorker registered: ', registration);
+          })
+          .catch(error => {
+            console.log('ServiceWorker registration failed: ', error);
+          });
+      });
+    }
+  </script>
+</head>
+<body class="min-h-screen bg-base-100 text-base-content font-body overflow-x-hidden">
+  <div class="flex flex-col min-h-screen">
+    {{ partial "header.html" . }}
+    <main class="flex-grow">
+      {{ block "main" . }}{{ end }}
+    </main>
+    {{ partial "footer.html" . }}
+  </div>
+  
+  <!-- Scripts -->
+  
+  <!-- Navigation fix no longer needed with proper base URL and service worker -->
+  
+  <!-- Footer behavior script -->
+  <script src="{{ "js/footer-behavior.js" | relURL }}"></script>
+  
+  <!-- Active navigation highlighting -->
+  <script src="{{ "js/active-nav.js" | relURL }}"></script>
+  
+  <!-- Cache clearing tool (development only) -->
+  {{ if not hugo.IsProduction }}
+  <script src="{{ "js/clear-cache.js" | relURL }}"></script>
+  {{ end }}
+</body>
+</html>

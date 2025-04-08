@@ -1,0 +1,228 @@
+{{ define "main" }}
+  <div class="max-w-5xl mx-auto px-4">
+    <!-- Featured Principle -->
+    <section class="py-4 animate__animated animate__fadeIn">
+      <div class="flex justify-between items-center mb-4">
+        <h2 class="font-heading font-bold text-lg">Today's Principle</h2>
+      </div>
+      
+      <div class="todays-principle">
+        <!-- Static generation of today's principle using Hugo's resources functions -->
+        {{ $principlesData := resources.Get "data/principles.json" | transform.Unmarshal }}
+        {{ $randomIndex := mod now.Unix (len $principlesData.principles) }}
+        {{ $principle := index $principlesData.principles $randomIndex }}
+        
+        <div class="principle-card mb-8 animate__animated animate__fadeIn rounded-lg shadow overflow-hidden">
+          <div class="p-8">
+            <!-- Principle Header -->
+            <div class="flex justify-between items-start mb-6">
+              <div class="flex items-center">
+                <div class="w-12 h-12 rounded-full bg-{{ $principle.category }} flex items-center justify-center text-white mr-4 animate__animated animate__heartBeat animate__delay-200ms">
+                  <i class="ph ph-{{ $principle.icon }} text-xl"></i>
+                </div>
+                <h3 class="font-heading font-bold text-xl">{{ $principle.title }}</h3>
+              </div>
+            </div>
+            
+            <!-- Principle Content -->
+            <div class="mt-6 space-y-8">
+              <!-- Quote Section -->
+              {{ if $principle.quote }}
+              <div class="bg-gray-50 p-6 rounded-lg">
+                <!-- Centered Avatar -->
+                {{ if $principle.quote.author }}
+                {{ $kebabName := lower (replace $principle.quote.author " " "-") }}
+                {{ $pngPath := print "/images/avatars/" $kebabName ".png" }}
+                {{ $jpgPath := print "/images/avatars/" $kebabName ".jpg" }}
+                {{ $avatarExists := fileExists (print "static" $pngPath) }}
+                {{ $jpgExists := fileExists (print "static" $jpgPath) }}
+                
+                <div class="flex justify-center mb-4">
+                  {{ if or $avatarExists $jpgExists }}
+                    <!-- Use actual image if it exists -->
+                    {{ if $avatarExists }}
+                      <img src="{{ $pngPath | relURL }}" alt="{{ $principle.quote.author }}" class="w-16 h-16 aspect-square rounded-full object-cover border-2 border-{{ $principle.category }}">
+                    {{ else }}
+                      <img src="{{ $jpgPath | relURL }}" alt="{{ $principle.quote.author }}" class="w-16 h-16 aspect-square rounded-full object-cover border-2 border-{{ $principle.category }}">
+                    {{ end }}
+                  {{ else }}
+                    <!-- Use initials if no image exists -->
+                    <div class="w-16 h-16 rounded-full bg-{{ $principle.category }}-100 flex items-center justify-center text-{{ $principle.category }} border-2 border-{{ $principle.category }} animate__animated animate__pulse">
+                      {{ $nameParts := split $principle.quote.author " " }}
+                      {{ $firstChar := "" }}
+                      {{ $secondChar := "" }}
+                      
+                      {{ if ge (len $principle.quote.author) 1 }}
+                        {{ $firstChar = substr $principle.quote.author 0 1 }}
+                      {{ end }}
+                      
+                      {{ if gt (len $nameParts) 1 }}
+                        {{ $lastName := index $nameParts (sub (len $nameParts) 1) }}
+                        {{ if ge (len $lastName) 1 }}
+                          {{ $secondChar = substr $lastName 0 1 }}
+                        {{ end }}
+                      {{ else }}
+                        {{ if ge (len $principle.quote.author) 2 }}
+                          {{ $secondChar = substr $principle.quote.author 1 1 }}
+                        {{ end }}
+                      {{ end }}
+                      <span class="font-bold text-lg">{{ upper $firstChar }}{{ upper $secondChar }}</span>
+                    </div>
+                  {{ end }}
+                </div>
+                {{ end }}
+                <!-- Quote Content -->
+                <div class="text-center">
+                  <blockquote class="text-lg font-medium italic mb-2">
+                    "{{ $principle.quote.text }}"
+                  </blockquote>
+                  {{ if $principle.quote.author }}
+                  <cite class="text-sm text-gray-600">— {{ $principle.quote.author }}</cite>
+                  {{ end }}
+                  {{ if $principle.quote.context }}
+                  <div class="mt-3 text-sm text-center">{{ $principle.quote.context | markdownify }}</div>
+                  {{ end }}
+                </div>
+              </div>
+              {{ end }}
+              
+              <!-- Principle Statement -->
+              <div class="p-6 rounded-lg border-l-4 border-{{ $principle.category }} animate__animated animate__pulse animate__delay-100ms" style="background-color: rgba({{ if eq $principle.category "simplicity" }}59, 130, 246{{ end }}{{ if eq $principle.category "patience" }}76, 175, 80{{ end }}{{ if eq $principle.category "compassion" }}147, 51, 234{{ end }}, 0.1);">
+                <h4 class="font-heading font-semibold text-sm uppercase text-gray-500 mb-3">THE PRINCIPLE</h4>
+                <div class="font-heading font-semibold text-lg">
+                  {{ $principle.principle | markdownify }}
+                </div>
+              </div>
+              
+              <!-- Practice -->
+              <!-- {{ if $principle.practice }}
+              <div class="px-2">
+                <h4 class="font-heading font-semibold text-sm uppercase text-gray-500 mb-3">QUICK PRACTICE</h4>
+                <div class="text-base">
+                  {{ $principle.practice | markdownify }}
+                </div>
+              </div>
+              {{ end }} -->
+              
+              <!-- Reflection -->
+              {{ if $principle.reflection }}
+              <div class="p-6 rounded-lg bg-gray-50">
+                <h4 class="font-heading font-semibold text-sm uppercase text-gray-500 mb-3">REFLECTION</h4>
+                <div class="text-base italic">
+                  {{ $principle.reflection | markdownify }}
+                </div>
+              </div>
+              {{ end }}
+            </div>
+            
+            <!-- Category Badge at the Bottom -->
+            <div class="flex justify-between items-center mt-8">
+              <span class="px-3 py-1 rounded-full text-xs font-medium badge-{{ $principle.category }}">
+                {{ if eq $principle.category "simplicity" }}Simplicity{{ end }}
+                {{ if eq $principle.category "patience" }}Patience{{ end }}
+                {{ if eq $principle.category "compassion" }}Compassion{{ end }}
+              </span>
+
+              <a href="/principles/{{ $principle.category }}/{{ $principle.title | urlize }}/" class="text-{{ $principle.category }} hover:text-{{ $principle.category }}-700 text-sm font-medium flex items-center">
+                Practice 
+                <i class="ph ph-arrow-right ml-1"></i>
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="py-4 animate__animated animate__fadeIn">
+      <h2 class="font-heading font-bold text-lg mb-4">Choose Your Path</h2>
+      <div class="space-y-4">
+        <!-- Simplicity Category -->
+        <div class="principle-card border-t-4 border-simplicity animate__animated animate__fadeInUp animate__delay-0.1s overflow-hidden">
+          <div class="p-4">
+            <div class="flex items-center mb-2">
+              <div class="w-10 h-10 rounded-full bg-simplicity flex items-center justify-center text-white mr-3">
+                <i class="ph ph-compass text-xl"></i>
+              </div>
+              <h3 class="font-heading font-bold text-lg text-simplicity">Simplicity</h3>
+            </div>
+            <p class="text-sm text-gray-600">Finding clarity in complexity. Return to your center when the game feels overwhelming.</p>
+            <div class="flex justify-end mt-2">
+              <a href="{{ "principles/simplicity/" | relURL }}" class="px-3 py-1 bg-simplicity text-white text-sm font-medium rounded hover:bg-blue-700">
+                Explore
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Patience Category -->
+        <div class="principle-card border-t-4 border-patience animate__animated animate__fadeInUp animate__delay-0.2s overflow-hidden">
+          <div class="p-4">
+            <div class="flex items-center mb-2">
+              <div class="w-10 h-10 rounded-full bg-patience flex items-center justify-center text-white mr-3">
+                <i class="ph ph-timer text-xl"></i>
+              </div>
+              <h3 class="font-heading font-bold text-lg text-patience">Patience</h3>
+            </div>
+            <p class="text-sm text-gray-600">Allowing growth to unfold naturally. Learn to pause, reset, and find your rhythm.</p>
+            <div class="flex justify-end mt-2">
+              <a href="{{ "principles/patience/" | relURL }}" class="px-3 py-1 bg-patience text-white text-sm font-medium rounded hover:bg-green-700">
+                Explore
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Compassion Category -->
+        <div class="principle-card border-t-4 border-compassion animate__animated animate__fadeInUp animate__delay-0.3s overflow-hidden">
+          <div class="p-4">
+            <div class="flex items-center mb-2">
+              <div class="w-10 h-10 rounded-full bg-compassion flex items-center justify-center text-white mr-3">
+                <i class="ph ph-heart text-xl"></i>
+              </div>
+              <h3 class="font-heading font-bold text-lg text-compassion">Compassion</h3>
+            </div>
+            <p class="text-sm text-gray-600">Nurturing growth through kindness. Support yourself and teammates on the journey.</p>
+            <div class="flex justify-end mt-2">
+              <a href="{{ "principles/compassion/" | relURL }}" class="px-3 py-1 bg-compassion text-white text-sm font-medium rounded hover:bg-purple-700">
+                Explore
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Situation-Based Section -->
+    <section class="py-4 animate__animated animate__fadeIn animate__delay-4s">
+      <h2 class="font-heading font-bold text-lg mb-4">I Need Help With...</h2>
+      <div class="grid grid-cols-2 gap-3">
+        <a href="{{ "situations/game-pressure/" | relURL }}" class="flex items-center gap-2 border border-gray-300 rounded p-3 hover:bg-gray-50 animate__animated animate__fadeInRight animate__delay-1s">
+          <div class="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center text-red-600">
+            <i class="ph ph-warning"></i>
+          </div>
+          <span>Game Pressure</span>
+        </a>
+        <a href="{{ "situations/distraction/" | relURL }}" class="flex items-center gap-2 border border-gray-300 rounded p-3 hover:bg-gray-50 animate__animated animate__fadeInRight animate__delay-2s">
+          <div class="w-8 h-8 rounded-full bg-yellow-100 flex items-center justify-center text-yellow-600">
+            <i class="ph ph-lightning"></i>
+          </div>
+          <span>Staying Focused</span>
+        </a>
+        <a href="{{ "situations/mistakes/" | relURL }}" class="flex items-center gap-2 border border-gray-300 rounded p-3 hover:bg-gray-50 animate__animated animate__fadeInRight animate__delay-3s">
+          <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
+            <i class="ph ph-x"></i>
+          </div>
+          <span>Big Mistakes</span>
+        </a>
+        <a href="{{ "situations/teamwork/" | relURL }}" class="flex items-center gap-2 border border-gray-300 rounded p-3 hover:bg-gray-50 animate__animated animate__fadeInRight animate__delay-4s">
+          <div class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center text-green-600">
+            <i class="ph ph-users-three"></i>
+          </div>
+          <span>Teammate Issues</span>
+        </a>
+      </div>
+    </section>
+  </div>
+{{ end }}

@@ -1,0 +1,119 @@
+<div class="principle-card mb-8 animate__animated animate__{{ .animation }}">
+  <div class="p-8">
+    <div class="flex justify-between items-start mb-6">
+      <div class="flex items-center">
+        <div class="w-12 h-12 rounded-full bg-{{ .category }} flex items-center justify-center text-white mr-4 animate__animated animate__heartBeat animate__delay-200ms">
+          <i class="ph ph-{{ .icon }} text-xl"></i>
+        </div>
+        <h3 class="font-heading font-bold text-xl">{{ .title }}</h3>
+      </div>
+    </div>
+    
+    <!-- Principle Content -->
+    <div class="mt-6 space-y-8">
+      <!-- Quote Section -->
+      {{ if .quote }}
+      <div class="bg-gray-50 p-6 rounded-lg">
+        <div class="flex items-start">
+          {{ if .quoteAuthor }}
+          <div class="mr-4 flex-shrink-0">
+            {{ $kebabName := lower (replace .quoteAuthor " " "-") }}
+            
+            <!-- Always use the initials for now until we debug the image loading issue -->
+            <div class="w-16 h-16 rounded-full bg-{{ .category }}-100 flex items-center justify-center text-{{ .category }} border-2 border-{{ .category }}">
+              {{/* Extract initials safely */}}
+              {{ $firstChar := "" }}
+              {{ $secondChar := "" }}
+              {{ $name := .quoteAuthor }}
+              {{ $parts := split $name " " }}
+              
+              {{ if ge (len $name) 1 }}
+                {{ $firstChar = substr $name 0 1 }}
+              {{ end }}
+              
+              {{ if gt (len $parts) 1 }}
+                {{/* Get first char of last name */}}
+                {{ $lastName := index $parts (sub (len $parts) 1) }}
+                {{ if ge (len $lastName) 1 }}
+                  {{ $secondChar = substr $lastName 0 1 }}
+                {{ end }}
+              {{ else }}
+                {{/* For single names, take second character */}}
+                {{ if ge (len $name) 2 }}
+                  {{ $secondChar = substr $name 1 1 }}
+                {{ end }}
+              {{ end }}
+              
+              <span class="font-bold text-lg">{{ upper $firstChar }}{{ upper $secondChar }}</span>
+            </div>
+          </div>
+          {{ end }}
+          <div>
+            <blockquote class="text-lg font-medium italic mb-2">
+              "{{ .quote }}"
+            </blockquote>
+            {{ if .quoteAuthor }}
+            <cite class="text-sm text-gray-600">— {{ .quoteAuthor }}</cite>
+            {{ end }}
+            {{ if .quoteContext }}
+            <div class="mt-3 text-sm">{{ .quoteContext | markdownify }}</div>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+      {{ end }}
+      
+      <!-- Principle Statement -->
+      <div class="p-6 rounded-lg border-l-4 border-{{ .category }} animate__animated animate__pulse animate__delay-100ms" style="background-color: rgba({{ if eq .category "simplicity" }}59, 130, 246{{ end }}{{ if eq .category "patience" }}76, 175, 80{{ end }}{{ if eq .category "compassion" }}147, 51, 234{{ end }}, 0.1);">
+        <h4 class="font-heading font-semibold text-sm uppercase text-gray-500 mb-3">THE PRINCIPLE</h4>
+        <div class="font-heading font-semibold text-lg">
+          {{ .principle | markdownify }}
+        </div>
+      </div>
+      
+      <!-- Practice -->
+      <div class="px-2">
+        <h4 class="font-heading font-semibold text-sm uppercase text-gray-500 mb-3">QUICK PRACTICE</h4>
+        <div class="text-base">
+          {{ .practice | markdownify }}
+        </div>
+      </div>
+      
+      <!-- Reflection -->
+      <div class="p-6 rounded-lg bg-gray-50">
+        <h4 class="font-heading font-semibold text-sm uppercase text-gray-500 mb-3">REFLECTION</h4>
+        <div class="text-base italic">
+          {{ .reflection | markdownify }}
+        </div>
+      </div>
+    </div>
+    
+    <!-- Card Actions -->
+    <div class="flex justify-between mt-8">
+      <!-- Comment out save button -->
+      {{/* 
+      <button class="flex items-center gap-2 px-4 py-2 text-sm text-gray-600 rounded-md hover:bg-gray-100 animate__animated animate__heartBeat animate__delay-500ms">
+        <i class="ph ph-bookmark"></i>
+        Save
+      </button>
+      */}}
+      <div>
+        <button class="p-2 mx-1 text-gray-600 rounded-md hover:bg-gray-100">
+          <i class="ph ph-arrow-left"></i>
+        </button>
+        <button class="p-2 mx-1 text-gray-600 rounded-md hover:bg-gray-100">
+          <i class="ph ph-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Category Badge at the Bottom -->
+    <div class="mt-4 flex justify-end">
+      <span class="px-3 py-1 rounded-full text-xs font-medium badge-{{ .category }}">
+        {{ if eq .category "simplicity" }}Simplicity{{ end }}
+        {{ if eq .category "patience" }}Patience{{ end }}
+        {{ if eq .category "compassion" }}Compassion{{ end }}
+      </span>
+    </div>
+  </div>
+</div>
