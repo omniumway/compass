@@ -15,7 +15,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
   
   <!-- CSS -->
-  {{ $styles := resources.Get "css/processed-main.css" }}
+  {{ $styles := resources.Get "css/main.css" | css.PostCSS }}
   {{ if hugo.IsProduction }}
     {{ $styles = $styles | minify | fingerprint }}
   {{ end }}

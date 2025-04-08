@@ -1,17 +1,22 @@
-# Hugo default output directory
-/public/
-/resources/_gen/
-
-# Node modules
-/node_modules/
-
-# Temporary files
-.DS_Store
-*.log
+# Generated files by hugo
+public/
+resources/_gen/
+assets/jsconfig.json
+hugo_stats.json
 .hugo_build.lock
 
-# Netlify
-.netlify/
-.env
+# Node.js dependencies
+node_modules/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
 netlify-build.sh
+delete-temp-files.sh
+.gitignore
 make-exec.sh
