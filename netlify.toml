@@ -1,0 +1,16 @@
+[build]
+  publish = "public"
+  command = "hugo --minify"
+
+[build.environment]
+  HUGO_VERSION = "0.111.0"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  force = false
+  conditions = {ClientSideRendered = true}
+
+[context.production.environment]
+  HUGO_ENV = "production"
