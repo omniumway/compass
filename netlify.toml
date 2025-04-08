@@ -1,9 +1,10 @@
 [build]
   publish = "public"
-  command = "chmod +x netlify-build.sh && ./netlify-build.sh"
+  command = "npm install && hugo --minify"
 
 [build.environment]
   HUGO_VERSION = "0.111.0"
+  NODE_VERSION = "18.19.0"
 
 [[redirects]]
   from = "/*"
